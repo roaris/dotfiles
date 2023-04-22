@@ -1,5 +1,5 @@
 git_current_branch() {
-    if [ ! -d ".git" ]; then
+    if [ ! -e ".git" ]; then
         return
     fi
     branch_icon='\ue0a0'
