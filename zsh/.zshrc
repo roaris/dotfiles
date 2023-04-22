@@ -1,4 +1,4 @@
-function git_current_branch() {
+git_current_branch() {
     if [ ! -d ".git" ]; then
         return
     fi
@@ -34,3 +34,9 @@ mkcd() {
 
 alias ls='ls -F --color=auto'
 alias grep='grep --color=auto'
+
+# キーバインドの設定(vimっぽく)
+bindkey "^h" backward-char
+bindkey "^l" forward-char
+bindkey "^b" backward-word
+bindkey "^w" forward-word
