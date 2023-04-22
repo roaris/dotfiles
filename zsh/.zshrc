@@ -1,9 +1,12 @@
-# ブランチ名を表示
-git_branch() {
+function git_branch() {
+    # git branchの結果をsedで抽出
     git branch --no-color 2>/dev/null | sed -n 's/^\* \(.*\)$/\1/p'
 }
 
-PS1='%F{cyan}%n%f%F{green}%~%f:%F{magenta}$(git_branch)%f
+# プロンプトが表示されるたびに評価する
+setopt prompt_subst
+
+PS1='%F{cyan}%n%f%F{green}%~%f:%F{magenta}`git_branch`%f
 $ '
 
 mkcd() {
