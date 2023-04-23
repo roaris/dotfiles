@@ -1,0 +1,14 @@
+{
+  "editor.fontSize": 12,
+  "files.insertFinalNewline": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.hlsearch": true,
+  "terminal.integrated.fontFamily": "Inconsolata Nerd Font",
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.fontSize": 14
+}
