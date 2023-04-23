@@ -2,6 +2,7 @@
   "window.zoomLevel": 1,
   "editor.fontSize": 12,
   "files.insertFinalNewline": true,
+  "files.autoSave": "afterDelay",
   "vim.insertModeKeyBindings": [
     {
       "before": ["j", "j"],

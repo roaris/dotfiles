@@ -14,12 +14,12 @@ echo "Installing Applications..."
 
 while read line
 do
-    brew install $line
+    brew install "$line"
 done < ./brew/brew
 
 while read line
 do
-    echo $line
+    brew install --cask "$line"
 done < ./brew/brew_cask
 
 ln -s ~/dotfiles/zsh/.zshrc ~/.zshrc
