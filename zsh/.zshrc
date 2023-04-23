@@ -1,8 +1,8 @@
-git_current_branch() {
+get_current_branch() {
     if [ ! -e ".git" ]; then
         return
     fi
-    branch_icon='\ue0a0'
+    branch_icon='\ue725'
     # git branchの結果をsedで抽出
     branch_name=`git branch --no-color 2>/dev/null | sed -n 's/^\* \(.*\)$/\1/p'`
     git_status=`git status 2>/dev/null`
@@ -21,10 +21,16 @@ git_current_branch() {
     fi
 }
 
+get_time() {
+    clock_icon='\uf64f'
+    now_time=`date +"%H:%M"`
+    echo "${clock_icon} ${now_time}"
+}
+
 # プロンプトが表示されるたびに評価する
 setopt prompt_subst
 
-PS1='%F{cyan}%~%f `git_current_branch`
+PS1='%F{cyan}%~%f `get_time` `get_current_branch`
 $ '
 
 mkcd() {
@@ -32,7 +38,7 @@ mkcd() {
     cd $1
 }
 
-alias ls='ls -F --color=auto'
+alias ls='ls -FG'
 alias grep='grep --color=auto'
 
 # キーバインドの設定(vimっぽく)
