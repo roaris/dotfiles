@@ -1,0 +1,10 @@
+brew "git"
+brew "tree"
+brew "wget"
+brew "jq"
+
+cask "docker"
+cask "postman"
+cask "visual-studio-code"
+cask "iterm2"
+cask "sidekick"

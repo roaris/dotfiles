@@ -12,15 +12,7 @@ fi
 
 echo "Installing Applications..."
 
-while read line
-do
-    brew install "$line"
-done < ./brew/brew
-
-while read line
-do
-    brew install --cask "$line"
-done < ./brew/brew_cask
+brew bundle --file './macos/Brewfile'
 
 ln -s ~/dotfiles/zsh/.zshrc ~/.zshrc
 
