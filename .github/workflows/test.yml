@@ -1,0 +1,10 @@
+name: test
+on:
+  push:
+    branchs: [main]
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: zsh setup.sh
