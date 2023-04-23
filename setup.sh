@@ -36,5 +36,3 @@ if [ -e /usr/local/bin/code ]; then
 else
     echo "Install the code command from the command palette to add your extensions."
 fi
-
-ln -fs ~/dotfiles/iterm2/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
