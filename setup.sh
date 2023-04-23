@@ -24,7 +24,7 @@ done < ./brew/brew_cask
 
 ln -s ~/dotfiles/zsh/.zshrc ~/.zshrc
 
-ln -s ~/dotfiles/vscode/settings.json ~/Library/Application Support/Code/User/settings.json
+ln -fs ~/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
 
 echo "Installing VSCode Extensions..."
 
