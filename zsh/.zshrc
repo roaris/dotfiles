@@ -24,8 +24,14 @@ get_current_branch() {
 # プロンプトが表示されるたびに評価する
 setopt prompt_subst
 
-PS1='%F{030}%~%f %D{%H:%M:%S} `get_current_branch`
+PS1='%F{030}%~%f %D{%H:%M} `get_current_branch`
 $ '
+
+# 60秒毎に更新する
+TMOUT=60
+TRAPALRM() {
+    zle reset-prompt
+}
 
 mkcd() {
     mkdir $1
