@@ -1,10 +1,10 @@
 get_current_branch() {
-    if [ ! -e ".git" ]; then
+    # git branchの結果をsedで抽出
+    branch_name=`git branch --no-color 2>/dev/null | sed -n 's/^\* \(.*\)$/\1/p'`
+    if [[ ${branch_name} == "" ]]; then
         return
     fi
     branch_icon='\ue0a0'
-    # git branchの結果をsedで抽出
-    branch_name=`git branch --no-color 2>/dev/null | sed -n 's/^\* \(.*\)$/\1/p'`
     git_status=`git status 2>/dev/null`
     if [[ -n `echo ${git_status} | grep "^nothing to"` ]]; then
         echo "%F{002}${branch_icon}${branch_name}%f"
